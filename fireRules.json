@@ -1,0 +1,25 @@
+{
+  "rules": {
+    ".read": "true",
+    ".write": "true",
+    "contacts": {
+            "$contact": {
+                "Business number": {
+                    ".validate": "newData.isNumber() && newData.val().length == 9"
+                },
+                "Name": {
+                    ".validate": "newData.isString() && newData.val().length < 49 && newData.val().length > 1"
+                },
+                "Primary business": {
+                    ".validate": "newData.isString() && (newData.val() == 'Fisher' || newData.val() == 'Distributor' || newData.val() == 'Processor' || newData.val() == 'Fish Monger')"
+                },
+                "Address": {
+                    ".validate": "newData.isString() && newData.val().length < 50"
+                },
+                "Province/territory:": {
+                    ".validate": "newData.isString() && (newData.val() == 'AB' || newData.val() == 'BC' || newData.val() == 'MB' || newData.val() == 'NB' || newData.val() == 'NL' || newData.val() == 'NS' || newData.val() == 'NT' || newData.val() == 'NU' || newData.val() == 'ON' || newData.val() == 'PE' || newData.val() == 'QC' || newData.val() == 'SK' || newData.val() == 'YT' || newData.val() == '')"
+                }
+            }
+        }
+  }
+}
